@@ -3,14 +3,16 @@
 
   inputs = { };
 
-  outputs = { self }: {
-    templates = {
-      pkgs = {
-        path = ./pkgs;
-        description = "A flake providing packages in callPackage format";
-      };
+  outputs =
+    { self }:
+    {
+      templates = {
+        pkgs = {
+          path = ./pkgs;
+          description = "A flake providing packages in callPackage format";
+        };
 
-      default = self.templates.pkgs;
+        default = self.templates.pkgs;
+      };
     };
-  };
 }
