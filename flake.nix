@@ -5,9 +5,12 @@
 
   outputs = { self }: {
     templates = {
-      default = {
-        path = ./default;
+      pkgs = {
+        path = ./pkgs;
+        description = "A flake providing packages in callPackage format";
       };
+
+      default = self.templates.pkgs;
     };
   };
 }
